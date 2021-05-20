@@ -13,11 +13,11 @@ const path = require('path');
  */
 
 mix.js('resources/js/app.js', 'public/js').vue()
-  // .copy([
-  //   'resources/js/**/*.jpg',
-  //   'resources/js/**/*.png',
-  // ], 'www/images')
-  // .sass('resources/sass/common.scss', 'www/css')
+  .copy([
+    'resources/js/**/*.jpg',
+    'resources/js/**/*.png',
+  ], 'public/images')
+  .sass('resources/sass/common.scss', 'public/css')
   .sass('resources/sass/view-auth.scss', 'public/css')
   .sass('resources/sass/view-users.scss', 'public/css')
   .sourceMaps();

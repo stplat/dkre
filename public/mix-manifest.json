@@ -1,5 +1,12 @@
 {
     "/js/app.js": "/js/app.js",
+    "/./js/ViewLayout.chunk.js": "/./js/ViewLayout.chunk.js",
+    "/./js/ViewCheck.chunk.js": "/./js/ViewCheck.chunk.js",
+    "/./js/ViewUser.chunk.js": "/./js/ViewUser.chunk.js",
+    "/./js/Hamburger.chunk.js": "/./js/Hamburger.chunk.js",
+    "/css/common.css": "/css/common.css",
     "/css/view-users.css": "/css/view-users.css",
-    "/css/view-auth.css": "/css/view-auth.css"
+    "/css/view-auth.css": "/css/view-auth.css",
+    "/images/admin_avatar.png": "/images/admin_avatar.png",
+    "/images/manager_avatar.png": "/images/manager_avatar.png"
 }

@@ -1,6 +1,7 @@
 @import "variables";
 
 /* ПЕРЕМЕННЫЕ */
+$border-radius: 4px;
 $font-size: 14px;
 $color-text: $color-text-base;
 $shadow-box-inset: $shadow-box-inset;
@@ -61,8 +62,7 @@ $focus-color-yellow-border: #f9e744;
   height: 38px;
   font-size: $font-size;
   border-radius: $border-radius;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   &:disabled {
     opacity: 0.65;
@@ -81,21 +81,22 @@ $focus-color-yellow-border: #f9e744;
   padding: 0 8px;
 }
 
+
 /* МОДИФИКАТОР для кнопки - синий */
 .btn--primary {
-  color: #ffffff;
+  color: #FFFFFF;
   background-color: $color-blue-bg;
   border-color: $color-blue-border;
 
   .no-touchevents &:not(:disabled):not(.disabled):hover {
-    color: #ffffff;
+    color: #FFFFFF;
     background-color: $active-color-blue-bg;
     border-color: $active-color-blue-border;
   }
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled):focus {
-    color: #ffffff;
+    color: #FFFFFF;
     background-color: $focus-color-blue-bg;
     border-color: $focus-color-blue-border;
   }
@@ -103,19 +104,19 @@ $focus-color-yellow-border: #f9e744;
 
 /* МОДИФИКАТОР для кнопки - красный */
 .btn--danger {
-  color: #ffffff;
+  color: #FFFFFF;
   background-color: $color-red-bg;
   border-color: $color-red-border;
 
   .no-touchevents &:not(:disabled):not(.disabled):hover {
-    color: #ffffff;
+    color: #FFFFFF;
     background-color: $active-color-red-bg;
     border-color: $active-color-red-border;
   }
 
   &:not(:disabled):not(.disabled).active,
   &:not(:disabled):not(.disabled):focus {
-    color: #ffffff;
+    color: #FFFFFF;
     background-color: $focus-color-red-bg;
     border-color: $focus-color-red-border;
   }
@@ -123,7 +124,7 @@ $focus-color-yellow-border: #f9e744;
 
 /* МОДИФИКАТОР для кнопки - зеленый */
 .btn--success {
-  color: #ffffff;
+  color: #FFFFFF;
   background-color: $color-green-bg;
   border-color: $color-green-border;
 
@@ -133,14 +134,14 @@ $focus-color-yellow-border: #f9e744;
   }
 
   .no-touchevents &:not(:disabled):not(.disabled):hover {
-    color: #ffffff;
+    color: #FFFFFF;
     background-color: $active-color-green-bg;
     border-color: $active-color-green-border;
   }
 
   &:not(:disabled):not(.disabled).active,
   &:not(:disabled):not(.disabled):focus {
-    color: #ffffff;
+    color: #FFFFFF;
     background-color: $focus-color-green-bg;
     border-color: $focus-color-green-border;
   }
@@ -171,7 +172,7 @@ $focus-color-yellow-border: #f9e744;
 
 /* МОДИФИКАТОР для кнопки - темно-серый */
 .btn--secondary {
-  color: #ffffff;
+  color: #FFFFFF;
   background-color: $color-dark-grey-bg;
   border-color: $color-dark-grey-border;
 
@@ -214,6 +215,7 @@ $focus-color-yellow-border: #f9e744;
     border-color: $focus-color-yellow-border;
   }
 }
+
 
 .btn-outline-primary {
   font-weight: 500;
