@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,6 +12,25 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .vue()
-    .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/js').vue()
+  // .copy([
+  //   'resources/js/**/*.jpg',
+  //   'resources/js/**/*.png',
+  // ], 'www/images')
+  // .sass('resources/sass/common.scss', 'www/css')
+  .sass('resources/sass/view-auth.scss', 'public/css')
+  .sass('resources/sass/view-users.scss', 'public/css')
+  .sourceMaps();
+
+mix.webpackConfig({
+  output: {
+    path: path.resolve(__dirname, 'public/'),
+    publicPath: '/',
+    chunkFilename: './js/[name].chunk.js'
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'resources/js')
+    }
+  }
+});
