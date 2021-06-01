@@ -19,7 +19,11 @@
       </div>
       <div class="header__right">
         <ul class="breadcrumbs">
-          <li class="breadcrumbs-item" v-for="(item, key) in breadcrumbs" :key="key">
+          <li
+            class="breadcrumbs-item"
+            v-for="(item, key) in breadcrumbs"
+            :key="key"
+          >
             <a :href="item.slug" v-if="item.slug">{{ item.name }}</a>
             <template v-if="!item.slug">{{ item.name }}</template>
           </li>
@@ -29,38 +33,36 @@
   </div>
 </template>
 <script>
-  import User from './User';
+import User from "./User";
 
-  export default {
-    components: {
-      User
+export default {
+  components: {
+    User
+  },
+  emits: ["update:modelValue"],
+  props: {
+    modelValue: {
+      type: Boolean,
+      required: false
     },
-    model: {
-      prop: 'shownAside',
-      event: 'toggleAside'
-    },
-    props: {
-      shownAside: {
-        type: Boolean,
-        required: false
+    breadcrumbs: {
+      type: Array,
+      required: true
+    }
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    computedToggleAside: {
+      get() {
+        return this.modelValue;
       },
-      breadcrumbs: {
-        type: Array,
-        required: true
-      }
-    },
-    data() {
-      return {}
-    },
-    computed: {
-      computedToggleAside: {
-        get() {
-          return this.shownAside;
-        },
-        set(value) {
-          this.$emit('toggleAside', value);
-        }
+      set(value) {
+        console.log(value);
+        this.$emit("update:modelValue", value);
       }
     }
   }
+};
 </script>

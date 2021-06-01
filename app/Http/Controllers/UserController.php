@@ -24,6 +24,13 @@ class UserController extends Controller
      */
     public function index(): \Illuminate\Contracts\View\View
     {
-        return view('users');
+        return view('users')->with([
+            'data' => collect([
+                'userList' => [],
+                'roleList' => [],
+                'permissionList' => [],
+                'checkList' => [],
+            ])
+        ]);
     }
 }

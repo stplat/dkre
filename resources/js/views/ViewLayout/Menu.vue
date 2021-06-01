@@ -1,10 +1,7 @@
 <template>
   <div class="menu">
     <ul class="menu__list">
-      <li
-        v-for="(item, key) in computedMenuList"
-        :key="'menu-link-' + key + '-' + _uid"
-      >
+      <li v-for="(item, key) in computedMenuList" :key="'menu-link-' + key">
         <template v-if="item.hasOwnProperty('title')">
           <div class="menu__title">{{ item.title }}</div>
         </template>
@@ -26,21 +23,21 @@
           <input
             type="checkbox"
             hidden
-            :id="'menu-link-' + key + '-' + _uid"
+            :id="'menu-link-' + key"
             :checked="
               item.subList.some(subItem => subItem.hasOwnProperty('active'))
             "
           />
           <label
             class="menu__link menu__link--label"
-            :for="'menu-link-' + key + '-' + _uid"
+            :for="'menu-link-' + key"
             :class="'menu__link--' + item.slug"
             >{{ item.name }}</label
           >
           <ul class="menu__sub-list">
             <li
               v-for="(subItem, subKey) in item.subList"
-              :key="'menu-sub-link-' + subKey + '-' + _uid"
+              :key="'menu-sub-link-' + subKey"
             >
               <a
                 class="menu__link menu__link--sub"

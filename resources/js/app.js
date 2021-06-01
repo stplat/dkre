@@ -1,12 +1,13 @@
 require('@/bootstrap');
 require('@/modernizr');
 
-import Vue from 'vue';
-import Vuex from 'vuex';
+/* Vue 3.x */
+import { createApp, defineAsyncComponent } from 'vue';
+const app = createApp({});
 
-/* Vuex */
-Vue.use(Vuex);
-const store = new Vuex.Store({
+/* Vuex 4.x */
+import { createStore } from 'vuex';
+const store = createStore({
   modules: {},
   state: {
     // requestPath: 'http://elect.optimagp66.ru'
@@ -14,20 +15,24 @@ const store = new Vuex.Store({
   }
 });
 
+app.use(store);
+
 /* Mixins */
-Vue.mixin(require('./mixins/variables').default);
-Vue.mixin(require('./mixins/helpers').default);
+app.mixin(require('./mixins/variables').default);
+app.mixin(require('./mixins/helpers').default);
+
 
 /* Views */
-Vue.component('view-layout', () => import(/* webpackChunkName: "ViewLayout" */ '@/views/ViewLayout'));
-Vue.component('view-index', () => import(/* webpackChunkName: "ViewCheck" */ '@/views/ViewIndex'));
-Vue.component('view-user', () => import(/* webpackChunkName: "ViewUser" */ '@/views/ViewUser'));
+app.component('view-layout', defineAsyncComponent(() => import('@/views/ViewLayout')));
+app.component('view-index', defineAsyncComponent(() => import('@/views/ViewIndex')));
+app.component('view-user', defineAsyncComponent(() => import('@/views/ViewUser')));
 
 /* Base Components */
-Vue.component('hamburger', () => import(/* webpackChunkName: "Hamburger" */'./components/_base/Hamburger'));
+app.component('hamburger', defineAsyncComponent(() => import('./components/_base/Hamburger')));
 
 /* Custom Components */
+app.component('user-list', defineAsyncComponent(() => import('./components/UserList')));
 
 if (document.querySelectorAll('#app').length) {
-  new Vue({}).$mount("#app");
+  app.mount('#app');
 }
